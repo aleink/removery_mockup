@@ -203,10 +203,39 @@ display: block;
 font-size: 20px;
 margin: 0 0 8px 0;
 }
+/* --- TESTIMONIALS SECTION --- */
+#testimonials {
+background-color: var(--surface);
+}
+.testimonial-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 24px;
+}
+.testimonial-card {
+background-color: var(--bg);
+border: 1px solid var(--border);
+border-radius: var(--radius);
+padding: 28px;
+display: flex;
+flex-direction: column;
+}
+.testimonial-card p {
+flex-grow: 1;
+font-size: 16px;
+color: var(--ink-light);
+margin: 0 0 16px 0;
+}
+.testimonial-card cite {
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+color: var(--ink);
+}
 /* --- AMBASSADOR'S NOTE --- */
 .ambassador-card {
-background-color: var(--surface);
-border: 1px solid var(--border);
+background-color: #22252C;
+color: #fff;
 border-radius: 20px;
 padding: 48px;
 display: grid;
@@ -218,6 +247,7 @@ gap: 32px;
 .ambassador-card {
 grid-template-columns: 1fr;
 text-align: center;
+gap: 24px;
 }
 }
 .ambassador-card img {
@@ -225,22 +255,26 @@ width: 100px;
 height: 100px;
 border-radius: 50%;
 object-fit: cover;
+border: 3px solid var(--bg);
+margin: 0 auto;
 }
 .ambassador-card p {
 font-size: 18px;
 font-style: italic;
 line-height: 1.6;
 margin: 0;
+color: rgba(255,255,255,.9);
 }
 .ambassador-card cite {
 display: block;
 font-style: normal;
 font-weight: 600;
 margin-top: 16px;
+color: #fff;
 }
 /* --- FINAL CTA SECTION --- */
 #final-cta {
-background-color: var(--ink);
+background-color: var(--accent);
 color: #fff;
 text-align: center;
 border-radius: 24px;
@@ -248,7 +282,7 @@ padding: 80px 24px;
 margin-inline: 16px;
 }
 #final-cta h2 { color: #fff; }
-#final-cta p.lead { color: rgba(255,255,255,.8); max-width: 600px; margin: 0 auto 32px auto; }
+#final-cta p.lead { color: rgba(255,255,255,.9); max-width: 600px; margin: 0 auto 32px auto; }
 /* --- FOOTER --- */
 footer {
 text-align: center;
@@ -295,7 +329,7 @@ Claim Your $100 Perk & Book Free Consult
 <div class="features-grid">
 <div class="feature-card">
 <h3>PicoWay® Technology</h3>
-<p>Removery uses state-of-the-art PicoWay® lasers. These devices use ultra-fast pulses to shatter ink particles more effectively, leading to better clearance across a wide spectrum of colors.</p>
+<p>Removery uses state-of-the-art PicoWay® lasers. These devices use ultra-fast pulses to shatter ink particles more effectively, leading to better clearance across a wide spectrum of colors.[[3](https://www.google.com/url?sa=E&q=https%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHEd114S5Yp_iQRlK53QBPX1bGKoy2W9nRp_kXhlw0_-8SBcmEzntal-D4BLGyokRFv4_E_yJmz0EAjQJVwUpqCeHL5-Hl7dXWWfz7SZEcSB0IB5a3Mbmk74XReT2WT6j01oMe-)]</p>
 </div>
 <div class="feature-card">
 <h3>Specialist-Led Care</h3>
@@ -303,7 +337,7 @@ Claim Your $100 Perk & Book Free Consult
 </div>
 <div class="feature-card">
 <h3>A Plan For Your Goals</h3>
-<p>Whether you want a complete removal or to fade a tattoo for a new cover-up, their experts will create a personalized treatment plan tailored to your specific needs during your free consultation.</p>
+<p>Whether you want a complete removal or to fade a tattoo for a new cover-up, their experts will create a personalized treatment plan tailored to your specific needs during your free consultation.[[2](https://www.google.com/url?sa=E&q=https%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEB9cYbEFelNdm3fZhdO-QvMkfCexaJxezUJNcuM8WodBZUUj_xwb-0fRnmSP8fY75yvyA_XUHt0Ih6beqyq7kBEdeOLrd-1XNN0mE0pBDYM8GKj9Lf92QgLSqEvsJReQryU01DSos%3D)]</p>
 </div>
 </div>
 </section>
@@ -317,15 +351,37 @@ Claim Your $100 Perk & Book Free Consult
 <div class="steps-grid">
 <div class="step">
 <h3>1. Book Your Free Consult</h3>
-<p>Click my ambassador link to schedule a no-obligation consultation at any Removery location. Their experts will assess your tattoo and answer all your questions.</p>
+<p>Click my ambassador link to schedule a no-obligation consultation at any Removery location. Their experts will assess your tattoo and answer all your questions.[[2](https://www.google.com/url?sa=E&q=https%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEB9cYbEFelNdm3fZhdO-QvMkfCexaJxezUJNcuM8WodBZUUj_xwb-0fRnmSP8fY75yvyA_XUHt0Ih6beqyq7kBEdeOLrd-1XNN0mE0pBDYM8GKj9Lf92QgLSqEvsJReQryU01DSos%3D)]</p>
 </div>
 <div class="step">
 <h3>2. Start Your Treatment</h3>
-<p>Once you decide to move forward, you'll begin your personalized laser sessions. Each session is quick, precise, and handled by a trained professional.</p>
+<p>Once you decide to move forward, you'll begin your personalized laser sessions. Each session is quick, precise, and handled by a trained professional.[[3](https://www.google.com/url?sa=E&q=https%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHEd114S5Yp_iQRlK53QBPX1bGKoy2W9nRp_kXhlw0_-8SBcmEzntal-D4BLGyokRFv4_E_yJmz0EAjQJVwUpqCeHL5-Hl7dXWWfz7SZEcSB0IB5a3Mbmk74XReT2WT6j01oMe-)]</p>
 </div>
 <div class="step">
 <h3>3. Get Your $100 Reward</h3>
 <p>After your first paid treatment, Removery will send you (and me!) a $100 gift card as a thank you for using my referral. It's that simple.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- TESTIMONIALS -->
+<section id="testimonials" aria-labelledby="testimonials-title">
+<div class="wrap">
+<div class="section-intro">
+<h2 id="testimonials-title">What Our Clients Say</h2>
+</div>
+<div class="testimonial-grid">
+<div class="testimonial-card">
+<p>"I went to the consultation and was greeted by Sarah. She was so incredibly nice... I just had a really great experience at Removery. Right now it's after my first session and my side kind of feels like I got a tattoo but without that weird plasticky wrap stuff."[[2](https://www.google.com/url?sa=E&q=https%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEB9cYbEFelNdm3fZhdO-QvMkfCexaJxezUJNcuM8WodBZUUj_xwb-0fRnmSP8fY75yvyA_XUHt0Ih6beqyq7kBEdeOLrd-1XNN0mE0pBDYM8GKj9Lf92QgLSqEvsJReQryU01DSos%3D)]</p>
+<cite>Clarissa P.</cite>
+</div>
+<div class="testimonial-card">
+<p>"I've seen good progress and my tattoo looks so much lighter than when I first started (black ink with lots of shading and thick lines). I will say this last time hurt the most, due to the laser levels increasing, but less than 5 min of pain is totally worth it for me."[[1](https://www.google.com/url?sa=E&q=https%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEuKaD7kJvF5Q0TAMbIf4M8eKnnpYeYH9D7ZyMRchZ_8_tk2BWlnLqZvofYell49XEPmnF-sgmhnITCrojcY2a4RwFqtrcSNchdAJ82PVpxgoi1_cgKmzaz-h6-4eKZBgQeojrYdxB-ux-sdwyb4Tem4MLS_24JbYWfqBNY-nlh68fsa1mWn6CPVspuJGOOuoGlu6R1jVgXmq4%3D)]</p>
+<cite>A. Reddit User</cite>
+</div>
+<div class="testimonial-card">
+<p>"I've been going to Removery for years and I've had a great experience. Removing 4 big black tattoos... I paid 4K for a total removal package of all 4, meaning they will treat me until all of them are completely gone. This was a good decision for me."[[1](https://www.google.com/url?sa=E&q=https%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEuKaD7kJvF5Q0TAMbIf4M8eKnnpYeYH9D7ZyMRchZ_8_tk2BWlnLqZvofYell49XEPmnF-sgmhnITCrojcY2a4RwFqtrcSNchdAJ82PVpxgoi1_cgKmzaz-h6-4eKZBgQeojrYdxB-ux-sdwyb4Tem4MLS_24JbYWfqBNY-nlh68fsa1mWn6CPVspuJGOOuoGlu6R1jVgXmq4%3D)]</p>
+<cite>Sn00pd0g123</cite>
 </div>
 </div>
 </div>
@@ -337,7 +393,7 @@ Claim Your $100 Perk & Book Free Consult
 </div>
 <div class="ambassador-card">
 <!-- Placeholder for a professional headshot of Alejandro -->
-<img src="https://via.placeholder.com/100x100.png?text=Alejandro" alt="Alejandro from Club Tattoo">
+<img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Alejandro from Club Tattoo">
 <div>
 <p>"As a tattoo artist, I know the importance of a clean canvas. Whether you're making space for new art or seeking a fresh start, the quality of removal is everything. I trust and recommend Removery because they are the best at what they do. Their professionalism and results are unmatched."</p>
 <cite>Alejandro Gonzalez, Club Tattoo Miracle Mile</cite>
