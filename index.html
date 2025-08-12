@@ -1,224 +1,366 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Removery Ambassador — Laser Tattoo Removal | Alejandro at Club Tattoo</title>
-  <meta name="description" content="Book laser tattoo removal with Removery via Alejandro (Club Tattoo, Miracle Mile). Learn how Removery's PicoWay® laser works, why specialists matter, and claim the Give $100, Get $100 gift card when you start treatment through this link.">
-  <style>
-    :root{
-      /* Palette aligned to Removery’s vibe: clean white, near-black text, bold red accents */
-      --bg:#ffffff; --ink:#111318; --muted:#5b616e; --border:#e6e8ee;
-      --accent:#e0002b; /* bold red */
-      --accent-dark:#b30021;
-      --surface:#f7f7f9;
-      --radius:14px; --pad:20px; --max:1100px; --shadow:0 8px 30px rgba(0,0,0,.08);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0; padding:0}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial,sans-serif; color:var(--ink); background:var(--bg); line-height:1.55}
-    a{color:var(--accent); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:var(--max); margin:0 auto; padding-inline:20px}
-    header{position:sticky; top:0; z-index:10; background:rgba(255,255,255,.9); backdrop-filter:saturate(180%) blur(10px); border-bottom:1px solid var(--border)}
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
-    .brand{display:flex; gap:12px; align-items:center}
-    .brand .dot{width:12px; height:12px; border-radius:50%; background:var(--accent)}
-    .brand h1{font-size:16px; margin:0; letter-spacing:.25px; font-weight:700}
-    .cta{display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:10px; font-weight:800; border:0; color:#fff; background:var(--accent); box-shadow:var(--shadow)}
-    .cta:hover{background:var(--accent-dark); transform:translateY(-1px)}
-    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; padding:36px 0}
-    @media (max-width:940px){.hero{grid-template-columns:1fr}}
-    .card{background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:clamp(18px,3vw,28px); box-shadow:var(--shadow)}
-    .eyebrow{font-size:12px; text-transform:uppercase; letter-spacing:.22em; color:var(--muted)}
-    h2{font-size:clamp(28px,4.5vw,44px); margin:10px 0 6px}
-    p.lead{font-size:clamp(16px,2.2vw,18px); color:#2a2f39; margin:0 0 14px}
-    .kpi{display:flex; gap:16px; flex-wrap:wrap; margin-top:12px}
-    .kpi .stat{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:10px 12px}
-    .stat small{display:block; color:var(--muted)}
-    .muted{color:var(--muted)}
-    .grid{display:grid; grid-template-columns:1.05fr .95fr; gap:24px}
-    @media (max-width:940px){.grid{grid-template-columns:1fr}}
-    .list{display:grid; gap:14px}
-    .bullet{border:1px solid var(--border); border-radius:12px; padding:14px; background:#fff}
-    .bullet h3{margin:0 0 6px; font-size:16px}
-    .badge{display:inline-block; font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(224,0,43,.08); color:var(--accent); border:1px solid rgba(224,0,43,.25); font-weight:700}
-    .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
-    @media (max-width:940px){.steps{grid-template-columns:1fr}}
-    .step{border:1px solid var(--border); border-radius:12px; padding:16px; background:#fff}
-    .step .num{font-weight:900; font-size:12px; letter-spacing:.15em; color:var(--muted)}
-    .form{border:1px solid var(--border); border-radius:12px; padding:16px; background:#fff}
-    input,select,textarea{width:100%; padding:12px 12px; border-radius:10px; border:1px solid var(--border); background:#fff; color:var(--ink)}
-    label{font-size:13px; color:var(--muted)}
-    .two{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-    @media (max-width:700px){.two{grid-template-columns:1fr}}
-    .faq details{border:1px solid var(--border); border-radius:10px; padding:14px 16px; background:#fff}
-    .faq details+details{margin-top:10px}
-    .disclaimer{border:1px dashed var(--border); border-radius:10px; padding:14px 16px; background:var(--surface)}
-    .legal-links{display:flex; gap:14px; flex-wrap:wrap}
-    footer{margin:40px 0; color:var(--muted); font-size:13px}
-    .cta-row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
-    .fine{font-size:12px; color:var(--muted)}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Removery Ambassador — Laser Tattoo Removal | Alejandro at Club Tattoo</title>
+<meta name="description" content="Book your expert tattoo removal with Removery through Alejandro (Club Tattoo) and get a $100 gift card. Featuring advanced PicoWay® laser technology and specialist care.">
+<style>
+:root {
+/* A refined palette: professional, clean, with a strong accent for action. */
+--ink: #22252C;
+--ink-light: #4F5561;
+--accent: #E0002B;
+--accent-hover: #B30021;
+--bg: #FFFFFF;
+--surface: #F8F9FA;
+--border: #EAECEF;
+--radius: 12px;
+--shadow: 0 10px 40px rgba(0,0,0,.06);
+--max-width: 1000px;
+}
+*, *::before, *::after {
+box-sizing: border-box;
+}
+html, body {
+margin: 0;
+padding: 0;
+scroll-behavior: smooth;
+}
+body {
+font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, sans-serif;
+color: var(--ink);
+background-color: var(--bg);
+line-height: 1.6;
+-webkit-font-smoothing: antialiased;
+}
+.wrap {
+max-width: var(--max-width);
+margin: 0 auto;
+padding: 0 24px;
+}
+/* --- HEADER --- */
+header {
+position: sticky;
+top: 0;
+z-index: 100;
+background-color: rgba(255, 255, 255, 0.85);
+backdrop-filter: saturate(180%) blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border-bottom: 1px solid var(--border);
+}
+.nav {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 16px 0;
+}
+.brand {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+.brand h1 {
+font-size: 16px;
+font-weight: 600;
+margin: 0;
+color: var(--ink);
+letter-spacing: -0.2px;
+}
+.brand .logo {
+height: 24px;
+width: auto;
+/* In a real scenario, this would be Removery's official logo */
+background-color: var(--accent);
+border-radius: 6px;
+width: 24px;
+}
+/* --- CALL TO ACTION BUTTON --- */
+.cta-button {
+display: inline-block;
+padding: 14px 28px;
+border-radius: var(--radius);
+font-weight: 700;
+font-size: 16px;
+color: #fff;
+background-color: var(--accent);
+border: none;
+text-decoration: none;
+transition: all 0.2s ease;
+box-shadow: 0 4px 15px rgba(224,0,43,.2);
+}
+.cta-button:hover {
+background-color: var(--accent-hover);
+transform: translateY(-2px);
+box-shadow: 0 7px 20px rgba(224,0,43,.25);
+text-decoration: none;
+}
+/* --- SECTIONS & TEXT --- */
+section {
+padding: 80px 0;
+}
+@media (max-width: 768px) {
+section { padding: 60px 0; }
+}
+.section-intro {
+text-align: center;
+max-width: 750px;
+margin: 0 auto 48px auto;
+}
+.eyebrow {
+font-size: 14px;
+font-weight: 700;
+color: var(--accent);
+text-transform: uppercase;
+letter-spacing: 0.1em;
+margin-bottom: 12px;
+}
+h2 {
+font-size: clamp(32px, 5vw, 48px);
+font-weight: 800;
+letter-spacing: -1.5px;
+margin: 0 0 16px 0;
+line-height: 1.1;
+}
+p.lead {
+font-size: clamp(18px, 2.5vw, 20px);
+color: var(--ink-light);
+margin: 0;
+line-height: 1.5;
+}
+p {
+font-size: 16px;
+color: var(--ink-light);
+}
+/* --- HERO SECTION --- */
+.hero {
+text-align: center;
+padding-top: 100px;
+}
+.hero p.lead {
+max-width: 680px;
+margin: 0 auto 32px auto;
+}
+.hero .disclaimer {
+margin-top: 16px;
+font-size: 13px;
+color: #9098A7;
+}
+/* --- WHY REMOVERY SECTION --- */
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 24px;
+margin-top: 48px;
+}
+.feature-card {
+background-color: var(--bg);
+border: 1px solid var(--border);
+border-radius: var(--radius);
+padding: 28px;
+text-align: left;
+}
+.feature-card h3 {
+font-size: 20px;
+margin: 16px 0 8px 0;
+}
+/* --- HOW IT WORKS SECTION --- */
+#how-it-works {
+background-color: var(--surface);
+}
+.steps-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+counter-reset: steps-counter;
+}
+@media (max-width: 768px) {
+.steps-grid { grid-template-columns: 1fr; }
+}
+.step {
+background-color: var(--bg);
+border: 1px solid var(--border);
+border-radius: var(--radius);
+padding: 28px;
+position: relative;
+}
+.step::before {
+counter-increment: steps-counter;
+content: counter(steps-counter);
+font-size: 18px;
+font-weight: 900;
+width: 44px;
+height: 44px;
+line-height: 44px;
+text-align: center;
+color: var(--accent);
+background-color: #FDF2F4;
+border-radius: 50%;
+margin-bottom: 20px;
+display: block;
+}
+.step h3 {
+font-size: 20px;
+margin: 0 0 8px 0;
+}
+/* --- AMBASSADOR'S NOTE --- */
+.ambassador-card {
+background-color: var(--surface);
+border: 1px solid var(--border);
+border-radius: 20px;
+padding: 48px;
+display: grid;
+grid-template-columns: 100px 1fr;
+align-items: center;
+gap: 32px;
+}
+@media (max-width: 768px) {
+.ambassador-card {
+grid-template-columns: 1fr;
+text-align: center;
+}
+}
+.ambassador-card img {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+object-fit: cover;
+}
+.ambassador-card p {
+font-size: 18px;
+font-style: italic;
+line-height: 1.6;
+margin: 0;
+}
+.ambassador-card cite {
+display: block;
+font-style: normal;
+font-weight: 600;
+margin-top: 16px;
+}
+/* --- FINAL CTA SECTION --- */
+#final-cta {
+background-color: var(--ink);
+color: #fff;
+text-align: center;
+border-radius: 24px;
+padding: 80px 24px;
+margin-inline: 16px;
+}
+#final-cta h2 { color: #fff; }
+#final-cta p.lead { color: rgba(255,255,255,.8); max-width: 600px; margin: 0 auto 32px auto; }
+/* --- FOOTER --- */
+footer {
+text-align: center;
+padding: 48px 24px;
+font-size: 14px;
+color: var(--ink-light);
+}
+footer p { margin: 4px 0; }
+footer a { color: var(--ink); font-weight: 500; text-decoration: underline; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
-  <div class="wrap nav">
-    <div class="brand" aria-label="Removery Ambassador (Independent)">
-      <span class="dot" aria-hidden="true"></span>
-      <h1>Removery Ambassador — Alejandro (Club Tattoo)</h1>
-    </div>
-    <a class="cta" href="https://removery.com/fade/?mbsy_source=5d25920f-d31a-4198-9c9b-f42d1096f426&campaignid=79425&mbsy=Alejandro8523&referralcode=Alejandro8523&firstname=Alejandro&lastname=Gonzalez&shop=Club+Tattoo" aria-label="Book consultation via ambassador link">Book with Removery</a>
-  </div>
+<div class="wrap nav">
+<a href="#" class="brand" aria-label="Removery Ambassador Home">
+<div class="logo" aria-hidden="true"></div>
+<h1>Alejandro at Club Tattoo</h1>
+</a>
+<a href="#final-cta" class="cta-button" style="padding:12px 24px;">Book Now</a>
+</div>
 </header>
-
-<main class="wrap">
-  <!-- HERO -->
-  <section class="hero" aria-labelledby="heroTitle">
-    <div class="card">
-      <div class="eyebrow">Independent Ambassador Page</div>
-      <h2 id="heroTitle">Laser tattoo removal with the specialists — plus the Give $100, Get $100 perk</h2>
-      <p class="lead">
-        Book your free consultation through my link to access Removery’s advanced <strong>PicoWay®</strong> laser treatments delivered by trained specialists — and when you start treatment, <strong>you’ll get a $100 gift card and I’ll get one too</strong> through Removery’s referral program.
-      </p>
-      <div class="kpi" role="list" aria-label="Removery highlights">
-        <div class="stat" role="listitem"><strong>Specialists in removal</strong><small>160+ hours training & Clinical Advisory Board</small></div>
-        <div class="stat" role="listitem"><strong>PicoWay® picosecond laser</strong><small>Fast pulses, multiple wavelengths</small></div>
-        <div class="stat" role="listitem"><strong>Studios across 3 countries</strong><small>Easy to find a location near you</small></div>
-      </div>
-      <div class="cta-row" style="margin-top:12px">
-        <a class="cta" href="https://removery.com/fade/?mbsy_source=5d25920f-d31a-4198-9c9b-f42d1096f426&campaignid=79425&mbsy=Alejandro8523&referralcode=Alejandro8523&firstname=Alejandro&lastname=Gonzalez&shop=Club+Tattoo">Check availability &raquo;</a>
-        <span class="fine">You’ll book and be treated directly by Removery.</span>
-      </div>
-    </div>
-    <div class="card">
-      <h3 style="margin:0 0 8px">What makes PicoWay® different</h3>
-      <ul class="list" style="margin:0; padding-left:18px">
-        <li><strong>Ultrafast picosecond pulses</strong> help shatter ink into tiny particles for efficient clearance.</li>
-        <li><strong>Multiple wavelengths</strong> to tackle a wide range of ink colors, including stubborn hues.</li>
-        <li><strong>Skin-focused approach</strong>—advanced tech chosen for precision and client comfort.</li>
-      </ul>
-      <p class="fine" style="margin-top:10px">Sources: Removery articles on PicoWay® technology and training/oversight.</p>
-    </div>
-  </section>
-
-  <!-- BENEFITS -->
-  <section aria-labelledby="benefitsTitle">
-    <div class="grid">
-      <div>
-        <h2 id="benefitsTitle">Why book through my ambassador page?</h2>
-        <div class="list">
-          <div class="bullet">
-            <span class="badge">Ambassador Perk</span>
-            <h3 style="margin:8px 0 6px">$100 gift card for you (and me)</h3>
-            <p>Start treatment via my link and Removery issues a <strong>$100 gift card to you</strong> through their “Give $100, Get $100” program — and I receive one too. Simple as that.</p>
-          </div>
-          <div class="bullet">
-            <span class="badge">Advanced Tech</span>
-            <h3 style="margin:8px 0 6px">PicoWay® laser treatments</h3>
-            <p>Removery uses picosecond pulses and multiple wavelengths designed to target a spectrum of tattoo colors with speed and precision, while keeping skin safety top of mind.</p>
-          </div>
-          <div class="bullet">
-            <span class="badge">Specialist Care</span>
-            <h3 style="margin:8px 0 6px">Training + clinical oversight</h3>
-            <p>Removal is their specialty. Their teams train extensively (160+ hours) and are supported by a Clinical Advisory Board dedicated to tattoo removal.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- CONTACT HANDOFF (optional) -->
-      <div class="form" aria-labelledby="formTitle">
-        <h3 id="formTitle" style="margin-top:0">Prefer a warm handoff?</h3>
-        <p class="muted">I can help you connect with the closest Removery studio before you book.</p>
-        <form onsubmit="window.location.href='https://removery.com/fade/?mbsy_source=5d25920f-d31a-4198-9c9b-f42d1096f426&campaignid=79425&mbsy=Alejandro8523&referralcode=Alejandro8523&firstname=Alejandro&lastname=Gonzalez&shop=Club+Tattoo'; return false;">
-          <div class="two">
-            <div><label for="name">Name</label><input id="name" name="name" placeholder="Your name" autocomplete="name"></div>
-            <div><label for="email">Email</label><input id="email" name="email" placeholder="you@example.com" type="email" autocomplete="email"></div>
-          </div>
-          <div class="two" style="margin-top:10px">
-            <div><label for="city">City</label><input id="city" name="city" placeholder="e.g., Los Angeles" autocomplete="address-level2"></div>
-            <div><label for="size">Tattoo size</label>
-              <select id="size" name="size">
-                <option value="">Select…</option>
-                <option>Small (≤3")</option>
-                <option>Medium (3–6")</option>
-                <option>Large (6–10")</option>
-                <option>XL (10"+)</option>
-              </select>
-            </div>
-          </div>
-          <div style="margin-top:10px"><label for="notes">Notes</label><textarea id="notes" name="notes" rows="4" placeholder="Tell me about color, age, or placement."></textarea></div>
-          <div style="margin-top:14px"><button class="cta" type="submit">Book with Removery</button></div>
-          <p class="fine" style="margin-top:8px">Submitting this form doesn’t schedule anything; booking happens on Removery’s site via my link.</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section aria-labelledby="howTitle" style="margin-top:28px">
-    <h2 id="howTitle">How it works</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="num">STEP 1</div>
-        <h3>Free consult</h3>
-        <p>Use my link to schedule with Removery. A specialist reviews your tattoo and maps a plan for removal or fading for a cover-up.</p>
-      </div>
-      <div class="step">
-        <div class="num">STEP 2</div>
-        <h3>PicoWay® laser sessions</h3>
-        <p>Picosecond pulses target ink efficiently, and multiple wavelengths address a wide range of colors. Sessions are designed to be fast and precise.</p>
-      </div>
-      <div class="step">
-        <div class="num">STEP 3</div>
-        <h3>Perks applied</h3>
-        <p>When your first paid session is confirmed via my link, Removery issues your $100 gift card (and I receive mine, too) under the <em>Give $100, Get $100</em> program.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq" aria-labelledby="faqTitle" style="margin-top:28px">
-    <h2 id="faqTitle">FAQ</h2>
-    <details>
-      <summary>Is this run by Removery?</summary>
-      <p>No. This independent page is by Alejandro at Club Tattoo (Miracle Mile). You’ll book and receive care directly with Removery.</p>
-    </details>
-    <details>
-      <summary>Where can I get treated?</summary>
-      <p>Removery operates studios across the U.S., Canada, and Australia. Use my link to find the nearest studio and book your consult.</p>
-    </details>
-    <details>
-      <summary>Do they treat color tattoos?</summary>
-      <p>Yes. PicoWay® uses multiple wavelengths to address a broad range of ink colors, including more stubborn hues. Your specialist will advise based on your tattoo.</p>
-    </details>
-    <details>
-      <summary>How many sessions will I need?</summary>
-      <p>It varies by size, color, age, depth, and placement. Your Removery consult provides an estimate tailored to your tattoo and goals.</p>
-    </details>
-  </section>
-
-  <!-- DISCLOSURES -->
-  <section aria-labelledby="legalTitle" style="margin-top:28px">
-    <h2 id="legalTitle">Disclosures & terms</h2>
-    <div class="disclaimer">
-      <ul>
-        <li><strong>Independent ambassador:</strong> This page is independently operated and not affiliated with or endorsed by Removery. All consultations and treatments are provided by Removery.</li>
-        <li><strong>Gift cards:</strong> The “Give $100, Get $100” gift cards are issued by Removery when a referred client starts treatment via this link. One per new client, subject to Removery’s program rules.</li>
-        <li><strong>Pricing:</strong> Final pricing, clinical eligibility, and treatment plans are set by Removery.</li>
-        <li><strong>Medical note:</strong> Laser procedures carry risks and results vary. Follow all clinical guidance and aftercare from Removery.</li>
-        <li><strong>Advertising:</strong> I may promote this page via ads and may receive referral credit.</li>
-      </ul>
-      <div class="legal-links" style="margin-top:10px">
-        <a href="https://removery.com/fade/?mbsy_source=5d25920f-d31a-4198-9c9b-f42d1096f426&campaignid=79425&mbsy=Alejandro8523&referralcode=Alejandro8523&firstname=Alejandro&lastname=Gonzalez&shop=Club+Tattoo">Find a Removery location</a>
-      </div>
-    </div>
-  </section>
+<main>
+<!-- HERO -->
+<section class="hero wrap" aria-labelledby="hero-title">
+<div class="eyebrow">An Exclusive Ambassador Offer</div>
+<h2 id="hero-title">Expert Tattoo Removal + a $100 Reward</h2>
+<p class="lead">
+I've partnered with Removery, the world's leading tattoo removal specialists. Use my link to book your free consultation and receive a <strong>$100 gift card</strong> when you begin your treatment.
+</p>
+<a class="cta-button" href="https://removery.com/fade/?mbsy_source=5d25920f-d31a-4198-9c9b-f42d1096f426&campaignid=79425&mbsy=Alejandro8523&referralcode=Alejandro8523&firstname=Alejandro&lastname=Gonzalez&shop=Club+Tattoo">
+Claim Your $100 Perk & Book Free Consult
+</a>
+<p class="disclaimer">You will book and be treated directly on Removery's official website.</p>
+</section>
+<!-- WHY REMOVERY -->
+<section id="why" class="wrap" aria-labelledby="why-title">
+<div class="section-intro">
+<h2 id="why-title">The Leaders in Laser Tattoo Removal.</h2>
+<p class="lead">Removery isn't just a clinic; they are the most trusted specialists in the world, focused exclusively on making you feel great in your skin.</p>
+</div>
+<div class="features-grid">
+<div class="feature-card">
+<h3>PicoWay® Technology</h3>
+<p>Removery uses state-of-the-art PicoWay® lasers. These devices use ultra-fast pulses to shatter ink particles more effectively, leading to better clearance across a wide spectrum of colors.</p>
+</div>
+<div class="feature-card">
+<h3>Specialist-Led Care</h3>
+<p>Every technician undergoes over 160 hours of rigorous training. Their work is overseen by a Clinical Advisory Board, ensuring the highest standards of safety and care for your skin.</p>
+</div>
+<div class="feature-card">
+<h3>A Plan For Your Goals</h3>
+<p>Whether you want a complete removal or to fade a tattoo for a new cover-up, their experts will create a personalized treatment plan tailored to your specific needs during your free consultation.</p>
+</div>
+</div>
+</section>
+<!-- HOW IT WORKS -->
+<section id="how-it-works" aria-labelledby="how-title">
+<div class="wrap">
+<div class="section-intro">
+<h2 id="how-title">Your Path to Clear Skin in 3 Steps.</h2>
+<p class="lead">The process is simple, transparent, and rewarding.</p>
+</div>
+<div class="steps-grid">
+<div class="step">
+<h3>1. Book Your Free Consult</h3>
+<p>Click my ambassador link to schedule a no-obligation consultation at any Removery location. Their experts will assess your tattoo and answer all your questions.</p>
+</div>
+<div class="step">
+<h3>2. Start Your Treatment</h3>
+<p>Once you decide to move forward, you'll begin your personalized laser sessions. Each session is quick, precise, and handled by a trained professional.</p>
+</div>
+<div class="step">
+<h3>3. Get Your $100 Reward</h3>
+<p>After your first paid treatment, Removery will send you (and me!) a $100 gift card as a thank you for using my referral. It's that simple.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- AMBASSADOR'S NOTE -->
+<section id="about" class="wrap" aria-labelledby="about-title">
+<div class="section-intro">
+<h2 id="about-title">A Note From Alejandro</h2>
+</div>
+<div class="ambassador-card">
+<!-- Placeholder for a professional headshot of Alejandro -->
+<img src="https://via.placeholder.com/100x100.png?text=Alejandro" alt="Alejandro from Club Tattoo">
+<div>
+<p>"As a tattoo artist, I know the importance of a clean canvas. Whether you're making space for new art or seeking a fresh start, the quality of removal is everything. I trust and recommend Removery because they are the best at what they do. Their professionalism and results are unmatched."</p>
+<cite>Alejandro Gonzalez, Club Tattoo Miracle Mile</cite>
+</div>
+</div>
+</section>
+<!-- FINAL CTA -->
+<section id="final-cta" aria-labelledby="cta-title">
+<div class="wrap">
+<h2 id="cta-title">Ready for a Change?</h2>
+<p class="lead">Your journey to clearer skin is just a click away. Book your free, no-pressure consultation today and secure your $100 reward.</p>
+<a class="cta-button" href="https://removery.com/fade/?mbsy_source=5d25920f-d31a-4198-9c9b-f42d1096f426&campaignid=79425&mbsy=Alejandro8523&referralcode=Alejandro8523&firstname=Alejandro&lastname=Gonzalez&shop=Club+Tattoo">
+Get Started with Removery
+</a>
+</div>
+</section>
 </main>
-
-<footer class="wrap">
-  <p>© <span id="y"></span> Alejandro — Removery Ambassador (Independent). Club Tattoo, Miracle Mile.</p>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<footer>
+<div class="wrap">
+<p>© <span id="year"></span> Alejandro Gonzalez — Independent Removery Ambassador</p>
+<p>All services are booked and provided directly by Removery. The "Give $100, Get $100" offer is subject to Removery's official program terms and conditions.</p>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</div>
 </footer>
 </body>
 </html>
