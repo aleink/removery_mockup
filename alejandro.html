@@ -10,14 +10,14 @@
 :root {
 --ink: #22252C;
 --ink-light: #4F5561;
---accent: #E0002B; /* A strong, premium red for action */
+--accent: #E0002B;
 --accent-hover: #B30021;
 --bg: #FFFFFF;
 --surface: #F8F9FA;
 --border: #EAECEF;
 --radius: 12px;
 --shadow: 0 10px 40px rgba(0,0,0,.06);
---max-width: 1100px; /* Slightly wider for a more premium feel */
+--max-width: 1100px;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
@@ -42,9 +42,7 @@ border-bottom: 1px solid var(--border);
 .nav-links { display: flex; align-items: center; gap: 28px; }
 .nav-links a { font-size: 15px; font-weight: 600; color: var(--ink-light); text-decoration: none; transition: color 0.2s ease; }
 .nav-links a:hover { color: var(--accent); }
-@media (max-width: 768px) {
-.nav-links { display: none; }
-}
+@media (max-width: 768px) { .nav-links { display: none; } }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .brand h1 { font-size: 18px; font-weight: 700; margin: 0; color: var(--ink); letter-spacing: -0.3px; }
 
@@ -82,53 +80,89 @@ h3 { font-size: 22px; margin: 0 0 8px 0; font-weight: 700; }
 .social-proof-inner a:hover { filter: grayscale(0); opacity: 1; }
 .social-proof-inner img { height: 32px; }
 
-/* --- PORTFOLIO SECTION --- */
+/* --- PORTFOLIO & LIGHTBOX GALLERY STYLES --- */
 #portfolio { background-color: var(--surface); }
 .portfolio-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 gap: 20px;
 }
-.portfolio-item img {
-width: 100%; height: 100%; object-fit: cover;
+.portfolio-item a {
+display: block;
+overflow: hidden;
 border-radius: var(--radius);
 box-shadow: var(--shadow);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+aspect-ratio: 1 / 1.25; /* Creates a nice vertical portrait ratio */
 }
-.portfolio-item img:hover {
-transform: scale(1.03);
-box-shadow: 0 15px 50px rgba(0,0,0,.1);
+.portfolio-item img {
+width: 100%; height: 100%; object-fit: cover;
+transition: transform 0.4s ease;
+}
+.portfolio-item a:hover img {
+transform: scale(1.05);
+}
+/* Lightbox Styles (CSS-only) */
+.lightbox {
+display: none;
+position: fixed;
+z-index: 999;
+top: 0; left: 0;
+width: 100%; height: 100%;
+background-color: rgba(0,0,0,0.85);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+}
+.lightbox:target {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.lightbox-content {
+position: relative;
+max-width: 90%;
+max-height: 90%;
+}
+.lightbox-content img {
+max-width: 100%;
+max-height: 100%;
+width: auto;
+height: auto;
+border-radius: var(--radius);
+box-shadow: 0 0 80px rgba(0,0,0,0.5);
+}
+.lightbox .close {
+position: absolute;
+top: -40px; right: 0px;
+font-size: 32px;
+font-weight: bold;
+color: #fff;
+text-decoration: none;
+font-family: sans-serif;
+}
+@media (max-width: 768px) {
+.lightbox .close { top: 15px; right: 25px; font-size: 40px; }
 }
 
-/* --- ABOUT SECTION (reusing ambassador card) --- */
+/* --- ABOUT SECTION --- */
 .about-card {
 background-color: var(--ink); color: #fff; border-radius: 20px; padding: 56px;
 display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: 40px;
 }
 @media (max-width: 768px) { .about-card { grid-template-columns: 1fr; text-align: center; gap: 24px; padding: 40px; } }
-.about-card img {
-width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
-border: 4px solid var(--bg); margin: 0 auto;
-}
+.about-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid var(--bg); margin: 0 auto; }
 .about-card p { font-size: 18px; line-height: 1.7; margin: 0 0 20px 0; color: rgba(255,255,255,.9); }
 .about-card cite { font-style: normal; font-weight: 600; color: #fff; font-size: 18px; }
 
 /* --- PRICING SECTION --- */
 .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
 @media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; } }
-.price-card {
-background-color: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
-padding: 32px; text-align: center;
-}
+.price-card { background-color: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; text-align: center; }
 .price-card .price { font-size: 48px; font-weight: 800; color: var(--accent); margin: 12px 0; }
 .price-card .starting-at { font-size: 14px; font-weight: 600; color: var(--ink-light); }
 
 /* --- REMOVERY CTA SECTION --- */
 #removal { background-color: var(--surface); }
-.removal-card {
-border: 1px solid var(--border); border-radius: var(--radius); padding: 40px;
-display: flex; justify-content: space-between; align-items: center; gap: 32px;
-}
+.removal-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; display: flex; justify-content: space-between; align-items: center; gap: 32px; }
 @media (max-width: 768px) { .removal-card { flex-direction: column; text-align: center; } }
 .removal-card .cta-button { flex-shrink: 0; }
 
@@ -141,14 +175,8 @@ display: flex; justify-content: space-between; align-items: center; gap: 32px;
 @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } }
 .form-group { margin-bottom: 20px; }
 .form-group.full-width { grid-column: 1 / -1; }
-.form-group label {
-display: block; font-weight: 600; font-size: 14px; margin-bottom: 8px;
-color: rgba(255,255,255,.9);
-}
-.form-group input, .form-group textarea, .form-group select {
-width: 100%; padding: 14px; border-radius: 8px; border: 1px solid #4F5561;
-background-color: #30343D; color: #fff; font-size: 16px; font-family: inherit;
-}
+.form-group label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 8px; color: rgba(255,255,255,.9); }
+.form-group input, .form-group textarea, .form-group select { width: 100%; padding: 14px; border-radius: 8px; border: 1px solid #4F5561; background-color: #30343D; color: #fff; font-size: 16px; font-family: inherit; }
 .form-group textarea { resize: vertical; min-height: 120px; }
 .form-group input::placeholder, .form-group textarea::placeholder { color: #9098A7; }
 .form-group .cta-button { width: 100%; font-size: 18px; padding: 18px; }
@@ -205,19 +233,79 @@ Begin Your Tattoo Journey
 <div class="wrap">
 <div class="section-intro">
 <h2 id="portfolio-title">My Work</h2>
-<p class="lead">A collection of recent portraits, each telling a unique story in skin. I specialize in both black & grey realism and rich, vibrant color.</p>
+<p class="lead">A collection of recent portraits, each telling a unique story in skin. Click on any image to see it in detail.</p>
 </div>
 <div class="portfolio-grid">
-<div class="portfolio-item"><a href="https://www.instagram.com/p/C6I5M93rS3S/" target="_blank"><img src="https://scontent-lax3-1.cdninstagram.com/v/t51.2885-15/440523297_1167440317992791_4874403816550791409_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyIn0&_nc_ht=scontent-lax3-1.cdninstagram.com&_nc_cat=109&_nc_ohc=8hRz6Ym5j3UQ7kNvgFY8m3B&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzM1NDc3NzY1MDQ2NzU4NjgxNw%3D%3D.2-ccb7-5&oh=00_AYC3sY5oQo6W54X0vFw_n8Y9Qj5_jK6k31h6s48qjVwV3g&oe=66C0C655&_nc_sid=ee9879" alt="Color portrait tattoo of a man with glasses"></a></div>
-<div class="portfolio-item"><a href="https://www.instagram.com/p/C8o79b8L1sQ/" target="_blank"><img src="https://scontent-lax3-2.cdninstagram.com/v/t51.2885-15/448858248_1804961556680076_8911293345862002166_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE3OTkuc2RyIn0&_nc_ht=scontent-lax3-2.cdninstagram.com&_nc_cat=103&_nc_ohc=2NnSStU8U40Q7kNvgFg48rC&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzM5Nzc5NTQ4NzY2NDQ1MjQ3NA%3D%3D.2-ccb7-5&oh=00_AYBq071bV3v9RzQpI_Q7E6-l58g_vK2B5sXzX2v2Q0H-9w&oe=66C0BC0C&_nc_sid=ee9879" alt="Black and grey portrait tattoo of a woman"></a></div>
-<div class="portfolio-item"><a href="https://www.instagram.com/p/C4iO55zrxzX/" target="_blank"><img src="https://scontent-lax3-1.cdninstagram.com/v/t51.2885-15/431189417_720040683641617_8526615555025732296_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyIn0&_nc_ht=scontent-lax3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=JtX6_k-e6X8Q7kNvgGfDk4L&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzMyNDkwMjM5OTkyMDc4NzE4NQ%3D%3D.2-ccb7-5&oh=00_AYDkFfW7kG-W-WzV3iJ_qUv9J8eQz71qj-9xUqE6v_e1EA&oe=66C0C4C8&_nc_sid=ee9879" alt="Color portrait tattoo of a man with a beard"></a></div>
-<div class="portfolio-item"><a href="https://www.instagram.com/p/C9HhUa-Ln_v/" target="_blank"><img src="https://scontent-lax3-1.cdninstagram.com/v/t51.2885-15/449272338_1596781704403310_323495861494793758_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE3OTkuc2RyIn0&_nc_ht=scontent-lax3-1.cdninstagram.com&_nc_cat=105&_nc_ohc=80-c1Y3j5k0Q7kNvgFv0X5u&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzQwNTg3ODEwNDEyNjQ3NTI0Mg%3D%3D.2-ccb7-5&oh=00_AYA4b1m62T-i1Fp2pQhL5F2oQ-Q1s4g2h3m2hD0u8b-Rgg&oe=66C0A620&_nc_sid=ee9879" alt="Black and grey portrait tattoo of an elderly man"></a></div>
-<div class="portfolio-item"><a href="https://www.instagram.com/p/C741E9YL1_1/" target="_blank"><img src="https://scontent-lax3-2.cdninstagram.com/v/t51.2885-15/448293962_828135892706346_4780614131557008785_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE3OTkuc2RyIn0&_nc_ht=scontent-lax3-2.cdninstagram.com&_nc_cat=103&_nc_ohc=49U71uHq6xQQ7kNvgEwX123&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzM4NzM0MTAxNzAxNDQyMjYwMw%3D%3D.2-ccb7-5&oh=00_AYBv6V-v3r9s0-z8r-24J6x11Lq5Kq4-p9pP4t68l910Lw&oe=66C0C69A&_nc_sid=ee9879" alt="Color portrait tattoo from a movie scene"></a></div>
-<div class="portfolio-item"><a href="https://www.instagram.com/p/C1p2mQ2LVYk/" target="_blank"><img src="https://scontent-lax3-1.cdninstagram.com/v/t51.2885-15/416625890_1549480602494191_104975569426569768_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyIn0&_nc_ht=scontent-lax3-1.cdninstagram.com&_nc_cat=109&_nc_ohc=y4M6cM1Q4pQQ7kNvgFW4WkL&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzI3MjE0NDMwNjQyMDc5NDgyMA%3D%3D.2-ccb7-5&oh=00_AYCM5L81cM5xT4-o8K82mB-V4rM3i6e-tB2230E0XvL1tQ&oe=66C0B438&_nc_sid=ee9879" alt="Black and grey tattoo of a historical figure"></a></div>
+<div class="portfolio-item">
+<a href="#img1">
+<img src="images/portrait-01.jpg" alt="Description of tattoo 1">
+</a>
+</div>
+<div class="portfolio-item">
+<a href="#img2">
+<img src="images/portrait-02.jpg" alt="Description of tattoo 2">
+</a>
+</div>
+<div class="portfolio-item">
+<a href="#img3">
+<img src="images/portrait-03.jpg" alt="Description of tattoo 3">
+</a>
+</div>
+<div class="portfolio-item">
+<a href="#img4">
+<img src="images/portrait-04.jpg" alt="Description of tattoo 4">
+</a>
+</div>
+<div class="portfolio-item">
+<a href="#img5">
+<img src="images/portrait-05.jpg" alt="Description of tattoo 5">
+</a>
+</div>
+<div class="portfolio-item">
+<a href="#img6">
+<img src="images/portrait-06.jpg" alt="Description of tattoo 6">
+</a>
+</div>
 </div>
 </div>
 </section>
 
+<div class="lightbox" id="img1">
+<div class="lightbox-content">
+<a href="#portfolio" class="close">×</a>
+<img src="images/portrait-01.jpg" alt="Full screen view of tattoo 1">
+</div>
+</div>
+<div class="lightbox" id="img2">
+<div class="lightbox-content">
+<a href="#portfolio" class="close">×</a>
+<img src="images/portrait-02.jpg" alt="Full screen view of tattoo 2">
+</div>
+</div>
+<div class="lightbox" id="img3">
+<div class="lightbox-content">
+<a href="#portfolio" class="close">×</a>
+<img src="images/portrait-03.jpg" alt="Full screen view of tattoo 3">
+</div>
+</div>
+<div class="lightbox" id="img4">
+<div class="lightbox-content">
+<a href="#portfolio" class="close">×</a>
+<img src="images/portrait-04.jpg" alt="Full screen view of tattoo 4">
+</div>
+</div>
+<div class="lightbox" id="img5">
+<div class="lightbox-content">
+<a href="#portfolio" class="close">×</a>
+<img src="images/portrait-05.jpg" alt="Full screen view of tattoo 5">
+</div>
+</div>
+<div class="lightbox" id="img6">
+<div class="lightbox-content">
+<a href="#portfolio" class="close">×</a>
+<img src="images/portrait-06.jpg" alt="Full screen view of tattoo 6">
+</div>
+</div>
 <section id="about" class="wrap" aria-labelledby="about-title">
 <div class="about-card">
 <img src="https://raw.githubusercontent.com/aleink/removery_mockup/main/D8A7F744-35AA-4A69-B7A6-1C4A024F374F.PNG" alt="Alejandro Gonzalez, Portrait Tattoo Artist">
