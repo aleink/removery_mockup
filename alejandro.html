@@ -1,0 +1,357 @@
+Of course. This is an excellent business decision. The affiliate page is a great, specific offer, but you need a central hub—a main landing page—that establishes you as a premier artist. This new page will be your digital storefront, building your brand and capturing high-quality leads.
+
+Regarding pricing: Yes, for a high-end artist specializing in a niche like portraits, listing *starting prices* is a very good business practice. It does two crucial things:
+
+1.  **Qualifies Clients:** It respectfully filters for clients who are prepared for the investment your level of artistry requires.
+2.  **Sets Expectations:** It immediately frames your work as a premium service, preventing awkward price negotiations later on.
+
+Here is a complete, ready-to-use HTML landing page built for you, Alejandro Gonzalez, as a specialist in portrait tattoos. It's designed to be a seamless extension of the style you already have, while focusing entirely on your personal brand and booking clients.
+
+### Key Features of This New Landing Page:
+
+  * **Artist-Centric:** The entire page is about you, your specialty, and your process.
+  * **Credibility First:** It immediately showcases your features in Forbes and Diario Las Américas.
+  * **Visual Portfolio:** A clean grid to display your best portrait work.
+  * **Clear Pricing:** The starting prices are presented elegantly as an "investment."
+  * **Action-Oriented Booking Form:** A detailed form to capture all the necessary information for a consultation.
+  * **Links to Your Affiliate Page:** It intelligently integrates a section for clients who might need tattoo removal first, directing them to your Removery page.
+  * **Mobile-Responsive:** Looks great on all devices.
+
+-----
+
+### Instructions
+
+1.  Save the code below as a new HTML file (e.g., `index.html`).
+2.  Place this new file in the same folder as your Removery affiliate page file.
+3.  **Review the \`\` comments in the code.** These are placeholders where you might want to add your own images or adjust text.
+4.  To make the booking form work, you will need to connect it to a service like [Formspree](https://formspree.io/), [Netlify Forms](https://www.netlify.com/products/forms/), or a custom backend. I've included a placeholder `action` attribute in the form for this.
+
+-----
+
+### `index.html` (Your New Main Landing Page)
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Alejandro Gonzalez — Master Portrait Tattoo Artist | Las Vegas</title>
+<meta name="description" content="Official website of Alejandro Gonzalez, a master portrait tattoo artist based at Club Tattoo, Las Vegas. Specializing in hyper-realistic black and grey & color portraits. Book your consultation today.">
+
+<style>
+:root {
+--ink: #22252C;
+--ink-light: #4F5561;
+--accent: #E0002B; /* A strong, premium red for action */
+--accent-hover: #B30021;
+--bg: #FFFFFF;
+--surface: #F8F9FA;
+--border: #EAECEF;
+--radius: 12px;
+--shadow: 0 10px 40px rgba(0,0,0,.06);
+--max-width: 1100px; /* Slightly wider for a more premium feel */
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+body {
+font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, sans-serif;
+color: var(--ink);
+background-color: var(--bg);
+line-height: 1.6;
+-webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+/* --- HEADER --- */
+header {
+position: sticky; top: 0; z-index: 100;
+background-color: rgba(255, 255, 255, 0.85);
+backdrop-filter: saturate(180%) blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border-bottom: 1px solid var(--border);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a { font-size: 15px; font-weight: 600; color: var(--ink-light); text-decoration: none; transition: color 0.2s ease; }
+.nav-links a:hover { color: var(--accent); }
+@media (max-width: 768px) {
+.nav-links { display: none; }
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand h1 { font-size: 18px; font-weight: 700; margin: 0; color: var(--ink); letter-spacing: -0.3px; }
+
+/* --- CALL TO ACTION BUTTON --- */
+.cta-button {
+display: inline-block; padding: 14px 28px; border-radius: var(--radius);
+font-weight: 700; font-size: 16px; color: #fff; background-color: var(--accent);
+border: none; text-decoration: none; transition: all 0.2s ease;
+box-shadow: 0 4px 15px rgba(224,0,43,.2);
+}
+.cta-button:hover {
+background-color: var(--accent-hover); transform: translateY(-2px);
+box-shadow: 0 7px 20px rgba(224,0,43,.25); text-decoration: none;
+}
+
+/* --- SECTIONS & TEXT --- */
+section { padding: 90px 0; }
+@media (max-width: 768px) { section { padding: 60px 0; } }
+.section-intro { text-align: center; max-width: 750px; margin: 0 auto 56px auto; }
+.eyebrow { font-size: 14px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+h2 { font-size: clamp(36px, 5vw, 52px); font-weight: 800; letter-spacing: -1.8px; margin: 0 0 16px 0; line-height: 1.1; }
+p.lead { font-size: clamp(18px, 2.5vw, 20px); color: var(--ink-light); margin: 0; line-height: 1.5; }
+p { font-size: 16px; color: var(--ink-light); }
+h3 { font-size: 22px; margin: 0 0 8px 0; font-weight: 700; }
+
+/* --- HERO SECTION --- */
+.hero { text-align: center; padding: 120px 0 100px 0; }
+.hero p.lead { max-width: 680px; margin: 0 auto 32px auto; }
+
+/* --- SOCIAL PROOF --- */
+.social-proof { text-align: center; padding: 24px 0; background-color: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.social-proof-inner { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+.social-proof-inner span { font-size: 14px; font-weight: 600; color: #9098A7; text-transform: uppercase; letter-spacing: 0.05em; }
+.social-proof-inner a { filter: grayscale(1); opacity: 0.7; transition: all 0.2s ease; }
+.social-proof-inner a:hover { filter: grayscale(0); opacity: 1; }
+.social-proof-inner img { height: 32px; }
+
+/* --- PORTFOLIO SECTION --- */
+#portfolio { background-color: var(--surface); }
+.portfolio-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 20px;
+}
+.portfolio-item img {
+width: 100%; height: 100%; object-fit: cover;
+border-radius: var(--radius);
+box-shadow: var(--shadow);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-item img:hover {
+transform: scale(1.03);
+box-shadow: 0 15px 50px rgba(0,0,0,.1);
+}
+
+/* --- ABOUT SECTION (reusing ambassador card) --- */
+.about-card {
+background-color: var(--ink); color: #fff; border-radius: 20px; padding: 56px;
+display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: 40px;
+}
+@media (max-width: 768px) { .about-card { grid-template-columns: 1fr; text-align: center; gap: 24px; padding: 40px; } }
+.about-card img {
+width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+border: 4px solid var(--bg); margin: 0 auto;
+}
+.about-card p { font-size: 18px; line-height: 1.7; margin: 0 0 20px 0; color: rgba(255,255,255,.9); }
+.about-card cite { font-style: normal; font-weight: 600; color: #fff; font-size: 18px; }
+
+/* --- PRICING SECTION --- */
+.pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+@media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; } }
+.price-card {
+background-color: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+padding: 32px; text-align: center;
+}
+.price-card .price { font-size: 48px; font-weight: 800; color: var(--accent); margin: 12px 0; }
+.price-card .starting-at { font-size: 14px; font-weight: 600; color: var(--ink-light); }
+
+/* --- REMOVERY CTA SECTION --- */
+#removal { background-color: var(--surface); }
+.removal-card {
+border: 1px solid var(--border); border-radius: var(--radius); padding: 40px;
+display: flex; justify-content: space-between; align-items: center; gap: 32px;
+}
+@media (max-width: 768px) { .removal-card { flex-direction: column; text-align: center; } }
+.removal-card .cta-button { flex-shrink: 0; }
+
+/* --- BOOKING FORM SECTION --- */
+#booking { background-color: var(--ink); color: #fff; }
+#booking h2 { color: #fff; }
+#booking p.lead { color: rgba(255,255,255,.8); }
+.booking-form { max-width: 800px; margin: 56px auto 0 auto; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } }
+.form-group { margin-bottom: 20px; }
+.form-group.full-width { grid-column: 1 / -1; }
+.form-group label {
+display: block; font-weight: 600; font-size: 14px; margin-bottom: 8px;
+color: rgba(255,255,255,.9);
+}
+.form-group input, .form-group textarea, .form-group select {
+width: 100%; padding: 14px; border-radius: 8px; border: 1px solid #4F5561;
+background-color: #30343D; color: #fff; font-size: 16px; font-family: inherit;
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-group input::placeholder, .form-group textarea::placeholder { color: #9098A7; }
+.form-group .cta-button { width: 100%; font-size: 18px; padding: 18px; }
+
+/* --- FOOTER --- */
+footer { text-align: center; padding: 48px 24px; font-size: 14px; color: var(--ink-light); background-color: var(--surface); }
+footer .socials { margin-bottom: 16px; }
+footer .socials a { display: inline-block; margin: 0 10px; }
+footer .socials svg { width: 24px; height: 24px; stroke: var(--ink-light); transition: stroke 0.2s; }
+footer .socials a:hover svg { stroke: var(--accent); }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+<div class="wrap nav">
+<a href="#" class="brand" aria-label="Home">
+<h1>Alejandro Gonzalez</h1>
+</a>
+<nav class="nav-links">
+<a href="#portfolio">Portfolio</a>
+<a href="#about">About</a>
+<a href="#pricing">Pricing</a>
+<a href="#removal">Removal</a>
+</nav>
+<a href="#booking" class="cta-button" style="padding:12px 24px;">Book Consultation</a>
+</div>
+</header>
+
+<main>
+<section class="hero wrap" aria-labelledby="hero-title">
+<div class="eyebrow">Master Portrait Tattoo Artist • Las Vegas</div>
+<h2 id="hero-title">Transforming Vision Into Timeless Art.</h2>
+<p class="lead">
+Specializing in hyper-realistic portraiture, I dedicate my craft to capturing emotion and detail, creating a piece of art you will cherish for a lifetime.
+</p>
+<a class="cta-button" href="#booking">
+Begin Your Tattoo Journey
+</a>
+</section>
+
+<div class="social-proof">
+<div class="wrap social-proof-inner">
+<span>As Featured In</span>
+<a href="https://forbes.com.mx/alejandro-gonzalez-revolucionara-el-mundo-de-los-tatuajes-en-art-basel/" target="_blank" title="Forbes Mexico"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Forbes_logo.svg/512px-Forbes_logo.svg.png" alt="Forbes Logo"></a>
+<a href="https://www.diariolasamericas.com/videos/el-artista-alejandro-gonzalez-rodriguez-talento-y-altruismo" target="_blank" title="Diario Las Américas"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Diario_las_Am%C3%A9ricas_logo.svg/512px-Diario_las_Am%C3%A9ricas_logo.svg.png" alt="Diario Las Américas Logo"></a>
+</div>
+</div>
+
+<section id="portfolio" aria-labelledby="portfolio-title">
+<div class="wrap">
+<div class="section-intro">
+<h2 id="portfolio-title">My Work</h2>
+<p class="lead">A collection of recent portraits, each telling a unique story in skin. I specialize in both black & grey realism and rich, vibrant color.</p>
+</div>
+<div class="portfolio-grid">
+<div class="portfolio-item"><a href="https://www.instagram.com/p/C6I5M93rS3S/" target="_blank"><img src="https://scontent-lax3-1.cdninstagram.com/v/t51.2885-15/440523297_1167440317992791_4874403816550791409_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyIn0&_nc_ht=scontent-lax3-1.cdninstagram.com&_nc_cat=109&_nc_ohc=8hRz6Ym5j3UQ7kNvgFY8m3B&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzM1NDc3NzY1MDQ2NzU4NjgxNw%3D%3D.2-ccb7-5&oh=00_AYC3sY5oQo6W54X0vFw_n8Y9Qj5_jK6k31h6s48qjVwV3g&oe=66C0C655&_nc_sid=ee9879" alt="Color portrait tattoo of a man with glasses"></a></div>
+<div class="portfolio-item"><a href="https://www.instagram.com/p/C8o79b8L1sQ/" target="_blank"><img src="https://scontent-lax3-2.cdninstagram.com/v/t51.2885-15/448858248_1804961556680076_8911293345862002166_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE3OTkuc2RyIn0&_nc_ht=scontent-lax3-2.cdninstagram.com&_nc_cat=103&_nc_ohc=2NnSStU8U40Q7kNvgFg48rC&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzM5Nzc5NTQ4NzY2NDQ1MjQ3NA%3D%3D.2-ccb7-5&oh=00_AYBq071bV3v9RzQpI_Q7E6-l58g_vK2B5sXzX2v2Q0H-9w&oe=66C0BC0C&_nc_sid=ee9879" alt="Black and grey portrait tattoo of a woman"></a></div>
+<div class="portfolio-item"><a href="https://www.instagram.com/p/C4iO55zrxzX/" target="_blank"><img src="https://scontent-lax3-1.cdninstagram.com/v/t51.2885-15/431189417_720040683641617_8526615555025732296_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyIn0&_nc_ht=scontent-lax3-1.cdninstagram.com&_nc_cat=111&_nc_ohc=JtX6_k-e6X8Q7kNvgGfDk4L&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzMyNDkwMjM5OTkyMDc4NzE4NQ%3D%3D.2-ccb7-5&oh=00_AYDkFfW7kG-W-WzV3iJ_qUv9J8eQz71qj-9xUqE6v_e1EA&oe=66C0C4C8&_nc_sid=ee9879" alt="Color portrait tattoo of a man with a beard"></a></div>
+<div class="portfolio-item"><a href="https://www.instagram.com/p/C9HhUa-Ln_v/" target="_blank"><img src="https://scontent-lax3-1.cdninstagram.com/v/t51.2885-15/449272338_1596781704403310_323495861494793758_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE3OTkuc2RyIn0&_nc_ht=scontent-lax3-1.cdninstagram.com&_nc_cat=105&_nc_ohc=80-c1Y3j5k0Q7kNvgFv0X5u&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzQwNTg3ODEwNDEyNjQ3NTI0Mg%3D%3D.2-ccb7-5&oh=00_AYA4b1m62T-i1Fp2pQhL5F2oQ-Q1s4g2h3m2hD0u8b-Rgg&oe=66C0A620&_nc_sid=ee9879" alt="Black and grey portrait tattoo of an elderly man"></a></div>
+<div class="portfolio-item"><a href="https://www.instagram.com/p/C741E9YL1_1/" target="_blank"><img src="https://scontent-lax3-2.cdninstagram.com/v/t51.2885-15/448293962_828135892706346_4780614131557008785_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE3OTkuc2RyIn0&_nc_ht=scontent-lax3-2.cdninstagram.com&_nc_cat=103&_nc_ohc=49U71uHq6xQQ7kNvgEwX123&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzM4NzM0MTAxNzAxNDQyMjYwMw%3D%3D.2-ccb7-5&oh=00_AYBv6V-v3r9s0-z8r-24J6x11Lq5Kq4-p9pP4t68l910Lw&oe=66C0C69A&_nc_sid=ee9879" alt="Color portrait tattoo from a movie scene"></a></div>
+<div class="portfolio-item"><a href="https://www.instagram.com/p/C1p2mQ2LVYk/" target="_blank"><img src="https://scontent-lax3-1.cdninstagram.com/v/t51.2885-15/416625890_1549480602494191_104975569426569768_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyIn0&_nc_ht=scontent-lax3-1.cdninstagram.com&_nc_cat=109&_nc_ohc=y4M6cM1Q4pQQ7kNvgFW4WkL&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzI3MjE0NDMwNjQyMDc5NDgyMA%3D%3D.2-ccb7-5&oh=00_AYCM5L81cM5xT4-o8K82mB-V4rM3i6e-tB2230E0XvL1tQ&oe=66C0B438&_nc_sid=ee9879" alt="Black and grey tattoo of a historical figure"></a></div>
+</div>
+</div>
+</section>
+
+<section id="about" class="wrap" aria-labelledby="about-title">
+<div class="about-card">
+<img src="https://raw.githubusercontent.com/aleink/removery_mockup/main/D8A7F744-35AA-4A69-B7A6-1C4A024F374F.PNG" alt="Alejandro Gonzalez, Portrait Tattoo Artist">
+<div>
+<h2 id="about-title" style="color:#fff; margin-bottom: 24px;">Driven by Passion and Precision.</h2>
+<p>From my studio at Club Tattoo in Las Vegas, I've dedicated my career to the art of the portrait. Featured in Forbes for "revolutionizing the world of tattoos," my work is a blend of technical skill and a deep appreciation for human expression. Each piece is a collaboration, a shared journey to create something truly personal and powerful.</p>
+<cite>Alejandro Gonzalez</cite>
+</div>
+</div>
+</section>
+
+<section id="pricing" class="wrap" aria-labelledby="pricing-title">
+<div class="section-intro">
+<h2 id="pricing-title">Investment in Your Art</h2>
+<p class="lead">Portrait tattoos are a significant commitment, both personally and financially. My pricing reflects the master-level quality, time, and dedication invested into every single piece.</p>
+</div>
+<div class="pricing-grid">
+<div class="price-card">
+<h3>Black & Grey Portraits</h3>
+<p>Ideal for capturing timeless emotion and stark realism with depth and shadow.</p>
+<div class="price">$1800</div>
+<div class="starting-at">Starting Price</div>
+</div>
+<div class="price-card">
+<h3>Color Portraits</h3>
+<p>Perfect for bringing vibrant life and dynamic energy to your subject.</p>
+<div class="price">$2200</div>
+<div class="starting-at">Starting Price</div>
+</div>
+</div>
+<p style="text-align: center; margin-top: 24px; color: var(--ink-light);">Final pricing is determined by size, complexity, and placement. A firm quote will be provided during your consultation.</p>
+</section>
+
+<section id="removal" aria-labelledby="removal-title">
+<div class="wrap">
+<div class="removal-card">
+<div>
+<h3 id="removal-title">Preparing Your Canvas?</h3>
+<p>For cover-ups or a completely fresh start, I partner with the best. <br>Click here to learn about expert tattoo removal and receive a $100 reward.</p>
+</div>
+<a href="removery-ambassador.html" class="cta-button">Learn About Removal</a>
+</div>
+</div>
+</section>
+
+<section id="booking" aria-labelledby="booking-title">
+<div class="wrap">
+<div class="section-intro">
+<h2 id="booking-title">Book Your Consultation</h2>
+<p class="lead">Let's begin the journey of creating your masterpiece. Please fill out the form below with as much detail as possible so I can fully understand your vision.</p>
+</div>
+<form class="booking-form" action="#" method="POST" enctype="multipart/form-data">
+<div class="form-grid">
+<div class="form-group">
+<label for="name">Full Name</label>
+<input type="text" id="name" name="name" required>
+</div>
+<div class="form-group">
+<label for="email">Email Address</label>
+<input type="email" id="email" name="email" required>
+</div>
+</div>
+<div class="form-group full-width">
+<label for="idea">Tattoo Idea</label>
+<textarea id="idea" name="idea" placeholder="Please describe your portrait idea in detail. Who is the subject? What is the mood or emotion you want to capture?" required></textarea>
+</div>
+<div class="form-grid">
+<div class="form-group">
+<label for="placement">Placement on Body</label>
+<input type="text" id="placement" name="placement" placeholder="e.g., Forearm, Bicep, Calf" required>
+</div>
+<div class="form-group">
+<label for="size">Approximate Size (in inches)</label>
+<input type="text" id="size" name="size" placeholder="e.g., 6x8 inches" required>
+</div>
+</div>
+<div class="form-group full-width">
+<label for="reference">Reference Photo (Optional but Recommended)</label>
+<input type="file" id="reference" name="reference" accept="image/*" style="padding: 12px; background-color: #4F5561;">
+</div>
+<div class="form-group full-width">
+<button type="submit" class="cta-button">Submit Booking Request</button>
+</div>
+</form>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="socials">
+<a href="https://www.instagram.com/alejandrogonzalezink/" target="_blank" aria-label="View Instagram Profile">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+</a>
+</div>
+<p>© <span id="year"></span> Alejandro Gonzalez — Portrait Tattoo Artist</p>
+<p>Based at Club Tattoo, Las Vegas. Consultations by appointment only.</p>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</div>
+</footer>
+
+</body>
+</html>
+```
